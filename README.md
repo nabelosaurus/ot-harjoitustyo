@@ -2,7 +2,7 @@
 
 ## Viikko 1 laskarit
 
-**Lorem ipsum** dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet suscipit neque.
+**Lorem ipsum** dolor sit amet, consectetur adipiscing elit. _Pellentesque sit amet suscipit neque._
 
 [gitlog.txt](/laskarit/viikko1/gitlog.txt)
 
