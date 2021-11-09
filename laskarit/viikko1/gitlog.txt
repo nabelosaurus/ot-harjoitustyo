@@ -1,0 +1,113 @@
+commit e63b1cbd87df1474a328a650dbe84c477024a112
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:34:10 2021 +0200
+
+    del file1, rename file2->file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit c1065b48207251689976ecd0a6283db566377e9a
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:27:50 2021 +0200
+
+    create tiedostoja/file1-3
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit a93e62d568edd38bdbf9125029c12df5379e0f8a
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:23:39 2021 +0200
+
+    patch eka and kolmas
+
+ eka.txt    | 2 ++
+ kolmas.txt | 2 ++
+ 2 files changed, 4 insertions(+)
+
+commit 95b2dcababa6b972338fbe3ae18fb89e6c2215e1
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:22:03 2021 +0200
+
+    rename tiedosto -> eka
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5087cae76e90eddd2c651203fab8b82bf26b0c4d
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:21:11 2021 +0200
+
+    poista toinen.txt-
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 8524d68230459ea6275d8431f8d2c360082dd33c
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:08:15 2021 +0200
+
+    poista osa, lisää osa tekstiä
+
+ tiedosto.txt | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+
+commit b91090623a60e4731b691963af8826171d0de99d
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:06:12 2021 +0200
+
+    lisaa tekstia
+
+ tiedosto.txt | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+
+commit 6cabc19001e3f1272b71b5e10703c70c58645665
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:01:48 2021 +0200
+
+    lisää jokin tiedosto
+
+ stuff/jokin_tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e02abddd11d4a9c929b5f1e2da51ea08d7b9939e
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 12:00:41 2021 +0200
+
+    kaksi muutosta
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit c52861543ef615ae0a7612ceec2adb36e6dc178f
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 11:59:57 2021 +0200
+
+    lisää kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e3c82c93343c1334388558a81cc10cf394ae1a71
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 11:56:18 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit f857a2505f55585c72b0f8f85e2acf56462bb6d2
+Author: Nael Shaban <nael.shaban@gmail.com>
+Date:   Tue Nov 9 11:54:42 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
