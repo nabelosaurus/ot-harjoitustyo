@@ -1,0 +1,7 @@
+# Compiled
+__pycache__/
+
+# Tests
+.pytest_cache/
+htmlcov/
+.coverage
