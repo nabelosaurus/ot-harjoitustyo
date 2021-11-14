@@ -8,3 +8,8 @@
 
 ## Viikko 2 laskarit
 
+[Maksukortti](/laskarit/viikko2/maksukortti)
+
+[Unicafe](/laskarit/viikko2/unicafe)
+
+![100% coverage for Unicafe](/laskarit/viikko2/unicafe_coverage.png)
