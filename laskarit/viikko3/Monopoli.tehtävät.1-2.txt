@@ -1,0 +1,29 @@
+[Pelaaja|nimi;raha|heitä_nopat(Noppa, Noppa)]
+[Pelinappula|liikuta(i)]
+[Noppa|arvo]
+[Pelilauta]
+[Ruutu|seuraava_ruutu]
+[Talo]-.-[Katuruutu]
+[Hotelli]-.-[Katuruutu]
+
+
+[Pelaaja]2..8-.->2[Noppa]
+[Pelaaja]1-1[Pelinappula]
+[Pelinappula]0..8-.-1[Ruutu]
+[Ruutu]40-1[Pelilauta]
+
+[Aloitusruutu|get_paid()]-[Ruutu]
+[Vankilaruutu|heitä_nopat(Noppa, Noppa)]-[Ruutu]
+[Sattumaruutu|nosta_kortti()]-[Ruutu]
+[Yhteismaaruutu|nosta_kortti()]-[Ruutu]
+[Asemaruutu|omistaja|osta();maksa()]-[Ruutu]
+[Laitosruutu|omistaja|osta();maksa()]-[Ruutu]
+[Katuruutu|omistaja|osta();rakenna_talo();rakenna_hotelli();maksa()]-[Ruutu]
+[Vankilaruutu]-.-[Noppa]
+
+[Pelaaja]-.-[Asemaruutu]
+[Pelaaja]-.-[Laitosruutu]
+[Pelaaja]-.-[Katuruutu]
+
+[Sattumaruutu]-[Sattumakortti|suorita_kortin_tehtävä()]
+[Yhteismaaruutu]-[Yhteismaakortti|suorita_kortin_tehtävä()]

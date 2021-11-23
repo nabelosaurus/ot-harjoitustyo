@@ -1,0 +1,13 @@
+title Viikko 3 - Tehtävä 3
+
+main->*machine_obj: Machine()
+machine_obj->*FuelTank: FuelTank()
+machine_obj->FuelTank: fill(40)
+machine_obj->*Engine: Engine(self._tank)
+main->machine_obj:machine_obj.drive()
+machine_obj->Engine:start()
+Engine->FuelTank:consume(5)
+machine_obj->Engine:is_running()
+Engine->machine_obj:True
+machine_obj->Engine:use_energy()
+Engine->FuelTank:consume(10)
