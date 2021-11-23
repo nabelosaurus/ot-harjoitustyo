@@ -1,24 +1,24 @@
-# Ohjelmistotekniikka
+# Harjoitustyö - Ohjelmistotekniikka
 
-## Laskarit
+Yksinkertainen sovellus salasanojen hallintaa varten.
 
-### Viikko 1
+#### Asennus
 
-[gitlog.txt](/laskarit/viikko1/gitlog.txt)
+    poetry install
 
-[komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
+#### Suoritus
 
-### Viikko 2
+    poetry run invoke start
 
-[Maksukortti](/laskarit/viikko2/maksukortti)
+#### Testien ajaminen
 
-[Unicafe](/laskarit/viikko2/unicafe)
+    poetry run invoke test
 
-![100% coverage for Unicafe](/laskarit/viikko2/unicafe_coverage.png)
+#### Testikattavuusraportin ajaminen
 
-## Harjoitustyö
+    poetry run invoke coverage-report
 
-### Viikko 2
+## Linkit
 
 [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
 
