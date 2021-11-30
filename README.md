@@ -2,21 +2,31 @@
 
 Yksinkertainen sovellus salasanojen hallintaa varten.
 
-#### Asennus
+### Asennus
 
     poetry install
 
-#### Suoritus
+    poetry run invoke build
+
+### Suoritus
 
     poetry run invoke start
 
-#### Testien ajaminen
+### Testien ajaminen
 
     poetry run invoke test
 
-#### Testikattavuusraportin ajaminen
+### Testikattavuusraportin ajaminen
 
     poetry run invoke coverage-report
+
+### Pylint
+
+    poetry run invoke lint
+
+### PEP 8
+
+    poetry run invoke format
 
 ## Linkit
 
@@ -25,3 +35,5 @@ Yksinkertainen sovellus salasanojen hallintaa varten.
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 
 [Käyttöliittymäluonnos](/dokumentaatio/ui.png)
+
+[Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)
