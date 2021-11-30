@@ -4,7 +4,7 @@ from repositories.user_repository import UserRepository
 
 def is_registered():
     user_repository = UserRepository(get_database_connection())
-    return True if user_repository.get_user() else False
+    return bool(user_repository.get_user())
 
 
 def register(password, verification):
@@ -12,7 +12,8 @@ def register(password, verification):
         user = User(_id=None, master_password=password)
         user_repository = UserRepository(get_database_connection())
         success = user_repository.create(user)
-        return True if success else False
+        return bool(success)
+    return False
 
 
 def passwords_match(password, verification):

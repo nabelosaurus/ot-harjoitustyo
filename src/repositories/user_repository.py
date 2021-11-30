@@ -13,6 +13,7 @@ class UserRepository:
     def get_user(self):
         if self.find_all():
             return self.find_all()[0]
+        return False
 
     def create(self, user):
         cursor = self._connection.cursor()

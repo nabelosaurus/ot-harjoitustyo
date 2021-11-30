@@ -1,6 +1,5 @@
 from tkinter import ttk, constants
 import registration
-from repositories.user_repository import UserRepository
 
 
 class RegistrationView:
@@ -26,7 +25,7 @@ class RegistrationView:
         if registration_successfull:
             self._handle_view_login()
         else:
-            error_msg = ttk.Label(master=self._frame, 
+            error_msg = ttk.Label(master=self._frame,
                 text="Passwords do not match or password is too short (10 characters min.).")
             error_msg.grid(row=6, column=0, columnspan=2,
                 sticky=(constants.E, constants.W), padx=5, pady=10)
