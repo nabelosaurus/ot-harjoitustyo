@@ -1,6 +1,7 @@
 import unittest
 from registration import check_password_length, passwords_match
 
+
 class TestRegister(unittest.TestCase):
     def setUp(self):
         pass
@@ -15,7 +16,8 @@ class TestRegister(unittest.TestCase):
         self.assertFalse(passwords_match("password", "verification"))
 
     def test_check_matching_passwords(self):
-        self.assertTrue(passwords_match("passwordpassword", "passwordpassword"))
+        self.assertTrue(passwords_match(
+            "passwordpassword", "passwordpassword"))
 
     def tearDown(self):
         pass

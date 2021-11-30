@@ -3,6 +3,7 @@ from views.list_view import ListView
 from views.login_view import LoginView
 from views.registration_view import RegistrationView
 
+
 class UI:
     def __init__(self, root):
         self._root = root
@@ -21,7 +22,8 @@ class UI:
     # View switchers
     def _show_registration_view(self):
         self._hide_current_view()
-        self._current_view = RegistrationView(self._root, self._handle_view_login)
+        self._current_view = RegistrationView(
+            self._root, self._handle_view_login)
         self._current_view.pack()
 
     def _show_login_view(self):
@@ -31,13 +33,15 @@ class UI:
 
     def _show_list_view(self):
         self._hide_current_view()
-        self._current_view = ListView(self._root, self._handle_view_item, self._handle_view_login)
+        self._current_view = ListView(
+            self._root, self._handle_view_item, self._handle_view_login)
         self._current_view.pack()
 
     def _show_item_view(self, prefill=None):
         self._hide_current_view()
         if prefill:
-            self._current_view = ItemView(self._root, self._handle_view_list, prefill)
+            self._current_view = ItemView(
+                self._root, self._handle_view_list, prefill)
         else:
             self._current_view = ItemView(self._root, self._handle_view_list)
         self._current_view.pack()

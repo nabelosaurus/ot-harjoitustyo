@@ -1,13 +1,5 @@
-class Login:
-    def __init__(self, _id, website, password, username=None, email=None):
-        self.id = _id
-        self.website = website
-        self.username = username
-        self.email = email
-        self.password = password
+from entities.login import Login
 
-    def __repr__(self):
-        return f"<{self.id}: {self.website}>"
 
 class LoginRepository:
     def __init__(self, connection):
@@ -18,10 +10,10 @@ class LoginRepository:
         cursor.execute("select * from logins")
         rows = cursor.fetchall()
         return [Login(
-                row["id"], 
-                row["website"], 
-                row["password"], 
-                row["username"], 
+                row["id"],
+                row["website"],
+                row["password"],
+                row["username"],
                 row["email"]) for row in rows]
 
     def find(self):
