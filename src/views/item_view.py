@@ -40,10 +40,10 @@ class ItemView:
         cancel_button = ttk.Button(master=self._frame, text="Cancel", command=self._cancel_click)
 
         if self._prefilled:
-            self.site_entry.insert(0, self._prefilled["website"])
-            self.email_entry.insert(0, self._prefilled["email"])
-            self.username_entry.insert(0, self._prefilled["username"])
-            self.password_entry.insert(0, self._prefilled["password"])
+            self.site_entry.insert(0, self._prefilled.website)
+            self.email_entry.insert(0, self._prefilled.email)
+            self.username_entry.insert(0, self._prefilled.username)
+            self.password_entry.insert(0, self._prefilled.password)
 
         site_label.grid(row=0, sticky=constants.W, padx=5)
         self.site_entry.grid(row=1, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
