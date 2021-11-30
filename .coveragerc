@@ -1,3 +1,8 @@
 [run]
 source = src
+
+[report]
 omit = src/**/__init__.py,src/tests/**,src/views/**,src/main.py
+exclude_lines =
+    def __repr__
+    if __name__ == .__main__.:
