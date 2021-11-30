@@ -30,7 +30,7 @@ class ItemView:
         username_entry = self.username_entry.get() if self.username_entry.get() != "" else None
         password_entry = self.password_entry.get()
         details = Login(
-            id=None,
+            _id=None,
             website=site_entry,
             email=email_entry,
             username=username_entry,
