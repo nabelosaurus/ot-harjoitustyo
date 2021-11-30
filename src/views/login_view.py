@@ -1,4 +1,5 @@
 from tkinter import ttk, constants
+import user_login
 
 
 class LoginView:
@@ -16,9 +17,7 @@ class LoginView:
         self._frame.destroy()
 
     def _login_handler(self):
-        password_from_database = "123"
-        pw_value = self.password_entry.get()
-        if pw_value == password_from_database:
+        if user_login.login_succesfull(self.password_entry.get()):
             self._handle_login()
         else:
             error_msg = ttk.Label(master=self._frame,
