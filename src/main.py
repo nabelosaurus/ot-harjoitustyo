@@ -7,8 +7,8 @@ def main():
     window.title('Much secrets..')
     window.resizable(False, False)
 
-    ui = UI(window)
-    ui.start()
+    user_interface = UI(window)
+    user_interface.start()
     window.mainloop()
 
 
