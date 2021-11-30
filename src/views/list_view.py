@@ -26,6 +26,10 @@ class ListView:
     def _logout_handler(self):
         self._handle_logout()
 
+    def _copy_handler(self, item):
+        self._root.clipboard_clear()
+        self._root.clipboard_append(item.password)
+
     def _initialize(self):
         login_repository = LoginRepository(get_database_connection())
         data = login_repository.find_all()
@@ -43,7 +47,7 @@ class ListView:
             entity.grid(row=i+2, column=0, sticky=(constants.W), padx=5, pady=5)
             entity_link = ttk.Button(master=self._frame, text="View", command=lambda entry=entry: self._item_handler(entry))
             entity_link.grid(row=i+2, column=1, padx=5, pady=5)
-            copy_link = ttk.Button(master=self._frame, text="Copy", command=lambda id=entry.id: print(f"Copy password {id} to clipboard.")) # Subprocess maybe?
+            copy_link = ttk.Button(master=self._frame, text="Copy", command=lambda entry=entry: self._copy_handler(entry))
             copy_link.grid(row=i+2, column=2, sticky=(constants.E), padx=5, pady=5)
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=250)
