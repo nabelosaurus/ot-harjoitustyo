@@ -2,6 +2,7 @@ from entities.user import User
 from database_connection import get_database_connection
 from repositories.user_repository import UserRepository
 
+
 class UserService:
 
     def __init__(self):

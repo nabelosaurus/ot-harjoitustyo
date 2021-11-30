@@ -11,7 +11,6 @@ class TestUserLogin(unittest.TestCase):
         initialize_database()
         self.user_service = UserService()
 
-
     def test_check_login_works_with_one_record_in_database(self):
         user_repository = UserRepository(get_database_connection())
         user_repository.create(User(_id=None, master_password="hello"))
@@ -34,7 +33,6 @@ class TestUserLogin(unittest.TestCase):
         user_repository.create(User(_id=None, master_password="hello2"))
         user_repository.create(User(_id=None, master_password="hello1"))
         self.assertTrue(self.user_service.login_succesfull("hello5"))
-    
 
     def tearDown(self):
         initialize_database()

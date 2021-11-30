@@ -15,10 +15,12 @@ class TestRegister(unittest.TestCase):
         self.assertFalse(self.user_service.check_password_length("password"))
 
     def test_check_password_length_with_password_that_meets_length_requirements(self):
-        self.assertTrue(self.user_service.check_password_length("passwordpassword"))
+        self.assertTrue(
+            self.user_service.check_password_length("passwordpassword"))
 
     def test_check_non_matching_passwords(self):
-        self.assertFalse(self.user_service.passwords_match("password", "verification"))
+        self.assertFalse(self.user_service.passwords_match(
+            "password", "verification"))
 
     def test_check_matching_passwords(self):
         self.assertTrue(self.user_service.passwords_match(
@@ -43,14 +45,14 @@ class TestRegister(unittest.TestCase):
         self.assertTrue(self.user_service.register("hellohello", "hellohello"))
 
     def test_registration_not_possible_when_password_and_verification_differ(self):
-        self.assertFalse(self.user_service.register("hellohello", "olleholleh"))
+        self.assertFalse(self.user_service.register(
+            "hellohello", "olleholleh"))
 
     def test_registration_not_possible_when_password_too_short(self):
         self.assertFalse(self.user_service.register("hello", "hello"))
 
     def test_registration_not_possible_when_parameters_empty(self):
         self.assertFalse(self.user_service.register("", ""))
-
 
     def tearDown(self):
         initialize_database()
