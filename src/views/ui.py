@@ -3,16 +3,17 @@ from views.list_view import ListView
 from views.login_view import LoginView
 from views.registration_view import RegistrationView
 
-from registration import is_registered
+from services.user_service import UserService
 
 
 class UI:
     def __init__(self, root):
         self._root = root
         self._current_view = None
+        self._is_registered = UserService().is_registered()
 
     def start(self):
-        if is_registered():
+        if self._is_registered:
             self._show_login_view()
         else:
             self._show_registration_view()

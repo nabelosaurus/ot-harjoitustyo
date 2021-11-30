@@ -1,5 +1,5 @@
 from tkinter import ttk, constants
-import user_login
+from services.user_service import UserService
 
 
 class LoginView:
@@ -7,6 +7,7 @@ class LoginView:
         self._root = root
         self._handle_login = handle_login
         self._frame = None
+        self.user_login = UserService()
 
         self._initialize()
 
@@ -17,7 +18,7 @@ class LoginView:
         self._frame.destroy()
 
     def _login_handler(self):
-        if user_login.login_succesfull(self.password_entry.get()):
+        if self.user_login.login_succesfull(self.password_entry.get()):
             self._handle_login()
         else:
             error_msg = ttk.Label(master=self._frame,

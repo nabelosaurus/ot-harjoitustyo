@@ -1,5 +1,5 @@
 from tkinter import ttk, constants
-import registration
+from services.user_service import UserService
 
 
 class RegistrationView:
@@ -7,6 +7,7 @@ class RegistrationView:
         self._root = root
         self._handle_view_login = handle_view_login
         self._frame = None
+        self.registration = UserService()
 
         self._initialize()
 
@@ -17,7 +18,7 @@ class RegistrationView:
         self._frame.destroy()
 
     def _registration_handler(self):
-        registration_successfull = registration.register(
+        registration_successfull = self.registration.register(
             self.password_entry.get(), self.password_verification_entry.get())
         self.password_entry.delete(0, "end")
         self.password_verification_entry.delete(0, "end")
