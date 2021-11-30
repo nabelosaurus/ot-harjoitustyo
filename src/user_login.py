@@ -1,5 +1,4 @@
 from database_connection import get_database_connection
-from entities.user import User
 from repositories.user_repository import UserRepository
 
 def login_succesfull(master_password):
