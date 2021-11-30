@@ -14,7 +14,7 @@ class TestRegister(unittest.TestCase):
     def test_check_non_matching_passwords(self):
         self.assertFalse(passwords_match("password", "verification"))
 
-    def test_check_non_matching_passwords(self):
+    def test_check_matching_passwords(self):
         self.assertTrue(passwords_match("passwordpassword", "passwordpassword"))
 
     def tearDown(self):

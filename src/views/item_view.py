@@ -22,7 +22,7 @@ class ItemView:
         success = login_repository.create(details)
         if success:
             self._handle_view_list()
-        
+
 
     def _save_click(self):
         site_entry = self.site_entry.get()
@@ -31,9 +31,9 @@ class ItemView:
         password_entry = self.password_entry.get()
         details = Login(
             id=None,
-            website=site_entry, 
-            email=email_entry, 
-            username=username_entry, 
+            website=site_entry,
+            email=email_entry,
+            username=username_entry,
             password=password_entry
         )
         self._handle_add_to_database(details)
@@ -56,7 +56,8 @@ class ItemView:
         self.username_entry = ttk.Entry(master=self._frame)
         password_label = ttk.Label(master=self._frame, text="Password:")
         self.password_entry = ttk.Entry(master=self._frame, show="*")
-        save_button = ttk.Button(master=self._frame, text="Add", command=self._save_click) # remember to refetch from db.
+        save_button = ttk.Button(master=self._frame, text="Add", command=self._save_click)
+        # remember to refetch from db.
         cancel_button = ttk.Button(master=self._frame, text="Cancel", command=self._cancel_click)
 
         if self._prefilled:
@@ -66,14 +67,20 @@ class ItemView:
             self.password_entry.insert(0, self._prefilled.password)
 
         site_label.grid(row=0, sticky=constants.W, padx=5)
-        self.site_entry.grid(row=1, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
+        self.site_entry.grid(row=1, column=0, columnspan=2,
+            sticky=(constants.E, constants.W), padx=5, pady=5)
         email_label.grid(row=2, sticky=constants.W, padx=5)
-        self.email_entry.grid(row=3, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
+        self.email_entry.grid(row=3, column=0, columnspan=2, 
+            sticky=(constants.E, constants.W), padx=5, pady=5)
         username_label.grid(row=4, sticky=constants.W, padx=5)
-        self.username_entry.grid(row=5, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
+        self.username_entry.grid(row=5, column=0, columnspan=2,
+            sticky=(constants.E, constants.W), padx=5, pady=5)
         password_label.grid(row=6, sticky=constants.W, padx=5)
-        self.password_entry.grid(row=7, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
-        save_button.grid(row=8, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
-        cancel_button.grid(row=9, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
+        self.password_entry.grid(row=7, column=0, columnspan=2, 
+            sticky=(constants.E, constants.W), padx=5, pady=5)
+        save_button.grid(row=8, column=0, columnspan=2, 
+            sticky=(constants.E, constants.W), padx=5, pady=10)
+        cancel_button.grid(row=9, column=0, columnspan=2, 
+            sticky=(constants.E, constants.W), padx=5, pady=10)
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=500)

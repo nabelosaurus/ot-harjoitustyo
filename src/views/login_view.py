@@ -20,8 +20,9 @@ class LoginView:
         if pw_value == password_from_database:
             self._handle_login()
         else:
-            foo = ttk.Label(master=self._frame, text="Wrong password. Please try again..")
-            foo.grid(row=4, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
+            error_msg = ttk.Label(master=self._frame, text="Wrong password. Please try again..")
+            error_msg.grid(
+                row=4, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -32,7 +33,9 @@ class LoginView:
 
         heading_label.grid(row=0, column=0, columnspan=2, sticky=constants.W, padx=5, pady=10)
         password_label.grid(row=1, sticky=constants.W, padx=5)
-        self.password_entry.grid(row=2, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
-        button.grid(row=3, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
+        self.password_entry.grid(
+            row=2, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
+        button.grid(
+            row=3, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)

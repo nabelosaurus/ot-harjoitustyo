@@ -42,7 +42,6 @@ class UI:
             self._current_view = ItemView(self._root, self._handle_view_list)
         self._current_view.pack()
 
-    
     def _handle_view_login(self):
         self._show_login_view()
 

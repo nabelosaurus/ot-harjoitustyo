@@ -1,14 +1,12 @@
-from database_connection import get_database_connection
-
 class Login:
-    def __init__(self, id, website, password, username=None, email=None):
-        self.id = id
+    def __init__(self, _id, website, password, username=None, email=None):
+        self.id = _id
         self.website = website
         self.username = username
         self.email = email
         self.password = password
 
-    def __repr__(self):    
+    def __repr__(self):
         return f"<{self.id}: {self.website}>"
 
 class LoginRepository:
@@ -19,7 +17,12 @@ class LoginRepository:
         cursor = self._connection.cursor()
         cursor.execute("select * from logins")
         rows = cursor.fetchall()
-        return [Login(row["id"], row["website"], row["password"], row["username"], row["email"]) for row in rows]
+        return [Login(
+                row["id"], 
+                row["website"], 
+                row["password"], 
+                row["username"], 
+                row["email"]) for row in rows]
 
     def find(self):
         pass
@@ -27,7 +30,7 @@ class LoginRepository:
     def create(self, login):
         cursor = self._connection.cursor()
         cursor.execute(
-            'insert into logins (website, username, email, password) values (?, ?, ?, ?)', 
+            'insert into logins (website, username, email, password) values (?, ?, ?, ?)',
             (login.website, login.username, login.email, login.password)
         )
         self._connection.commit()
