@@ -22,12 +22,12 @@ class RegistrationView:
             self.password_entry.get(), self.password_verification_entry.get())
         self.password_entry.delete(0, "end")
         self.password_verification_entry.delete(0, "end")
-        
+
         if registration_successfull:
             self._handle_view_login()
         else:
             error_msg = ttk.Label(master=self._frame, 
-                text="Passwords do not match or password is too short.")
+                text="Passwords do not match or password is too short (10 characters min.).")
             error_msg.grid(row=6, column=0, columnspan=2,
                 sticky=(constants.E, constants.W), padx=5, pady=10)
 
