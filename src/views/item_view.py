@@ -1,4 +1,6 @@
 from tkinter import ttk, constants
+from database_connection import get_database_connection
+from repositories.login_repository import Login, LoginRepository
 
 class ItemView:
     def __init__(self, root, handle_view_list, prefill=None):
@@ -15,9 +17,27 @@ class ItemView:
     def destroy(self):
         self._frame.destroy()
 
+    def _handle_add_to_database(self, details):
+        login_repository = LoginRepository(get_database_connection())
+        success = login_repository.create(details)
+        if success:
+            self._handle_view_list()
+        
+
     def _save_click(self):
-        print("Saving. Exiting to list view.")
-        self._handle_view_list()
+        site_entry = self.site_entry.get()
+        email_entry = self.email_entry.get() if self.email_entry.get() != "" else None
+        username_entry = self.username_entry.get() if self.username_entry.get() != "" else None
+        password_entry = self.password_entry.get()
+        details = Login(
+            id=None,
+            website=site_entry, 
+            email=email_entry, 
+            username=username_entry, 
+            password=password_entry
+        )
+        self._handle_add_to_database(details)
+        # self._handle_view_list()
 
     def _cancel_click(self):
         self.site_entry.delete(0, "end")
@@ -36,7 +56,7 @@ class ItemView:
         self.username_entry = ttk.Entry(master=self._frame)
         password_label = ttk.Label(master=self._frame, text="Password:")
         self.password_entry = ttk.Entry(master=self._frame, show="*")
-        save_button = ttk.Button(master=self._frame, text="Add/Save", command=self._save_click) # remember to refetch from db.
+        save_button = ttk.Button(master=self._frame, text="Add", command=self._save_click) # remember to refetch from db.
         cancel_button = ttk.Button(master=self._frame, text="Cancel", command=self._cancel_click)
 
         if self._prefilled:
