@@ -19,9 +19,6 @@ class ListView:
 
     def _item_handler(self, prefill=None):
         if prefill:
-            # self._handle_view_item()
-            # print(prefill)
-            # print("Load data from db here, and prefill", prefill)
             self._handle_view_item(prefill)
         else:
             self._handle_view_item()
