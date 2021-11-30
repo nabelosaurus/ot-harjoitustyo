@@ -22,7 +22,7 @@ class LoginRepository:
     def create(self, login):
         cursor = self._connection.cursor()
         cursor.execute(
-            'insert into logins (website, username, email, password) values (?, ?, ?, ?)',
+            "insert into logins (website, username, email, password) values (?, ?, ?, ?)",
             (login.website, login.username, login.email, login.password)
         )
         self._connection.commit()
