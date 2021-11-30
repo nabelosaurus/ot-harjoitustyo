@@ -3,6 +3,8 @@ from views.list_view import ListView
 from views.login_view import LoginView
 from views.registration_view import RegistrationView
 
+from registration import is_registered
+
 
 class UI:
     def __init__(self, root):
@@ -10,7 +12,10 @@ class UI:
         self._current_view = None
 
     def start(self):
-        self._show_registration_view()
+        if is_registered():
+            self._show_login_view()
+        else:
+            self._show_registration_view()
         # self._show_list_view()
 
     def _hide_current_view(self):
