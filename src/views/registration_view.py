@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
 import registration
+from repositories.user_repository import UserRepository
 
 
 class RegistrationView:
@@ -17,19 +18,18 @@ class RegistrationView:
         self._frame.destroy()
 
     def _registration_handler(self):
-        pw_value = self.password_entry.get()
-        pw_verification_value = self.password_verification_entry.get()
+        registration_successfull = registration.register(
+            self.password_entry.get(), self.password_verification_entry.get())
         self.password_entry.delete(0, "end")
         self.password_verification_entry.delete(0, "end")
-        if registration.passwords_match(pw_value, pw_verification_value) and \
-                registration.check_password_length(pw_value):
+        
+        if registration_successfull:
             self._handle_view_login()
         else:
-            error_msg = ttk.Label(master=self._frame,
-                                  text="Passwords do not match or password is too short. \
-                Please choose retype the password or choose a stronger one.")
+            error_msg = ttk.Label(master=self._frame, 
+                text="Passwords do not match or password is too short.")
             error_msg.grid(row=6, column=0, columnspan=2,
-                           sticky=(constants.E, constants.W), padx=5, pady=10)
+                sticky=(constants.E, constants.W), padx=5, pady=10)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
