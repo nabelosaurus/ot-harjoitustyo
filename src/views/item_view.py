@@ -34,9 +34,11 @@ class ItemView:
         ):
             self._handle_view_list()
         else:
-            error_msg = ttk.Label(master=self._frame,
-                                  text="Validation failed. Website, password, and \
-                    either a username, email or both is required. ")
+            msg = "Validation failed. "
+            msg += "Website and password are required. "
+            msg += "Either a username or email is also required.\n"
+            msg += "Minimun character lengths are: website: 4, username: 2, email: 8, password: 1."
+            error_msg = ttk.Label(master=self._frame, text=msg)
             error_msg.grid(
                 row=10, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
 
