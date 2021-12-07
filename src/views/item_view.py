@@ -1,7 +1,5 @@
 from tkinter import ttk, constants
-from database_connection import get_database_connection
-from entities.login import Login
-from repositories.login_repository import LoginRepository
+from services.logins_service import LoginService
 
 
 class ItemView:
@@ -10,6 +8,7 @@ class ItemView:
         self._prefilled = prefill
         self._frame = None
         self._handle_view_list = handle_view_list
+        self._login_service = LoginService()
 
         self._initialize()
 
@@ -19,26 +18,27 @@ class ItemView:
     def destroy(self):
         self._frame.destroy()
 
-    def _handle_add_to_database(self, details):
-        login_repository = LoginRepository(get_database_connection())
-        success = login_repository.create(details)
-        if success:
-            self._handle_view_list()
-
     def _save_click(self):
         site_entry = self.site_entry.get()
-        email_entry = self.email_entry.get() if self.email_entry.get() != "" else None
+        email_entry = self.email_entry.get(
+        ) if self.email_entry.get() != "" else None
         username_entry = self.username_entry.get(
         ) if self.username_entry.get() != "" else None
         password_entry = self.password_entry.get()
-        details = Login(
-            _id=None,
+
+        if self._login_service.process_save(
             website=site_entry,
-            email=email_entry,
             username=username_entry,
+            email=email_entry,
             password=password_entry
-        )
-        self._handle_add_to_database(details)
+        ):
+            self._handle_view_list()
+        else:
+            error_msg = ttk.Label(master=self._frame,
+                                  text="Validation failed. Website, password, and \
+                    either a username, email or both is required. ")
+            error_msg.grid(
+                row=10, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
 
     def _cancel_click(self):
         self.site_entry.delete(0, "end")

@@ -27,9 +27,9 @@ class RegistrationView:
             self._handle_view_login()
         else:
             error_msg = ttk.Label(master=self._frame,
-                text="Passwords do not match or password is too short (10 characters min.).")
+                                  text="Passwords do not match or password is too short (10 characters min.).")
             error_msg.grid(row=6, column=0, columnspan=2,
-                sticky=(constants.E, constants.W), padx=5, pady=10)
+                           sticky=(constants.E, constants.W), padx=5, pady=10)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -52,7 +52,7 @@ class RegistrationView:
         password_verification_label.grid(
             row=3, sticky=constants.W, padx=5, pady=5)
         self.password_verification_entry.grid(row=4, column=0, columnspan=2,
-                                sticky=(constants.E, constants.W), padx=5, pady=5)
+                                              sticky=(constants.E, constants.W), padx=5, pady=5)
         button.grid(row=5, column=0, columnspan=2,
                     sticky=(constants.E, constants.W), padx=5, pady=10)
 
