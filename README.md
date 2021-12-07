@@ -2,6 +2,9 @@
 
 Yksinkertainen sovellus salasanojen hallintaa varten.
 
+[Release 1 / Viikko 5](https://github.com/nabelosaurus/ot-harjoitustyo/releases/tag/viikko5)
+
+
 ### Asennus
 
     poetry install
