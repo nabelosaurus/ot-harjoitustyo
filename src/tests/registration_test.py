@@ -27,9 +27,6 @@ class TestRegister(unittest.TestCase):
             "passwordpassword", "passwordpassword"))
 
     def test_check_that_user_is_registered(self):
-        self.assertFalse(is_registered())
-
-    def test_check_that_user_is_registered(self):
         user_repository = UserRepository(get_database_connection())
         user_repository.create(User(_id=None, master_password="hello"))
         self.assertTrue(self.user_service.is_registered())
