@@ -9,4 +9,5 @@
 | 28.11 | Käyttöliittymän ja navigoinnin viimeisely. | 8 |
 | 30.11 | Tietokannan implementoiminen ja sovelluslogiikan kehittäminen | 8 |
 | 30.11 | Ohjelmakoodin refaktorointia, testien kirjoittamista, sekä pakkauskaavion piirtäminen | 7 |
-| yht.   | | 39 | 
+| 7.11  | Scrollattava lista, sovelluslogiikan irroittaminen käyttöliittymästä (LoginService), syötteen validointia, testejä | 8 |
+| yht.  |  | 47 | 
