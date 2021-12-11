@@ -1,5 +1,5 @@
 from entities.user import User
-
+from services.hashing_service import encrypt_master
 
 class UserRepository:
     def __init__(self, connection):
@@ -19,7 +19,7 @@ class UserRepository:
     def create(self, user):
         cursor = self._connection.cursor()
         cursor.execute(
-            "insert into users (master_password) values (?)", (user.master_password,)
+            "insert into users (master_password) values (?)", (encrypt_master(user.master_password),)
         )
         self._connection.commit()
         return True

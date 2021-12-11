@@ -1,6 +1,7 @@
 from entities.user import User
 from database_connection import get_database_connection
 from repositories.user_repository import UserRepository
+from services.hashing_service import verify_master
 
 
 class UserService:
@@ -30,4 +31,4 @@ class UserService:
 
     def login_succesfull(self, master_password):
         password_from_database = self.user_repository.get_user().master_password
-        return bool(master_password == password_from_database)
+        return verify_master(password_from_database, master_password)

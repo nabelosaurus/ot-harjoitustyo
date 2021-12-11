@@ -8,6 +8,8 @@ authors = ["Nael Shaban <nael.shaban@helsinki.fi>"]
 python = "^3.8"
 invoke = "^1.6.0"
 python-dotenv = "^0.19.2"
+argon2-cffi = "^21.2.0"
+argon2 = "^0.1.10"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
