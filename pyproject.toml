@@ -10,6 +10,7 @@ invoke = "^1.6.0"
 python-dotenv = "^0.19.2"
 argon2-cffi = "^21.2.0"
 argon2 = "^0.1.10"
+cryptography = "^36.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
