@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
 from services.logins_service import LoginService
+from services.hashing_service import hashing_service
 
 
 class ItemView:
@@ -68,7 +69,9 @@ class ItemView:
             self.site_entry.insert(0, self._prefilled.website)
             self.email_entry.insert(0, self._prefilled.email)
             self.username_entry.insert(0, self._prefilled.username)
-            self.password_entry.insert(0, self._prefilled.password)
+            self.password_entry.insert(0, hashing_service.decrypt_login_password(
+                self._prefilled.password, self._prefilled.salt)
+            )
 
         site_label.grid(row=0, sticky=constants.W, padx=5)
         self.site_entry.grid(row=1, column=0, columnspan=2,

@@ -1,3 +1,4 @@
+import os
 from entities.login import Login
 from database_connection import get_database_connection
 from repositories.login_repository import LoginRepository
@@ -20,7 +21,8 @@ class LoginService:
             website=website,
             email=email,
             username=username,
-            password=password
+            password=password,
+            salt=os.urandom(16)
         )
 
     def validate_input(self, login):
@@ -41,6 +43,8 @@ class LoginService:
         if login.email:
             if 0 < len(login.email) < 8:
                 valid = False
+        if not login.salt:
+            valid = False
         return valid
 
     def process_save(self, website, username, email, password):
