@@ -40,3 +40,5 @@ Yksinkertainen sovellus salasanojen hallintaa varten.
 [Käyttöliittymäluonnos](/dokumentaatio/ui.png)
 
 [Arkkitehtuuri](/dokumentaatio/arkkitehtuuri.md)
+
+[Käyttöohje](/dokumentaatio/käyttöohje.md)

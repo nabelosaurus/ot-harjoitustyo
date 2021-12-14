@@ -13,7 +13,7 @@ Sovelluksella on vain yksi normaali käyttäjä. Käyttäjä kirjautuu sovelluks
 ![user interface](/dokumentaatio/ui.png "user interface")
 
 
-Ensimmäinen näkymä on master salasanan asettamista varten. Kun salasana on kerran valittu, sovellus ei enää tätä näkymää esitä. Kirjautumisnäkymästä siirrytään listanäkymään kirjautumalla sisään master salasanalla. Listanäkymä listaa tallennetut kohteet. Listanäkymästä voidaan siirtyä kahteen eri näkymään, uuden kohteen lisääminen ja olemassa olevan kohteen katsominen. ✅ **tehty**
+Ensimmäinen näkymä on master salasanan asettamista varten. Kun salasana on kerran valittu, sovellus ei enää tätä näkymää esitä. Kirjautumisnäkymästä siirrytään listanäkymään kirjautumalla sisään master salasanalla. Listanäkymä listaa tallennetut kohteet. Listanäkymästä voidaan siirtyä kahteen eri näkymään, uuden kohteen lisääminen ja olemassa olevan kohteen katsominen.  **tehty**
 
 ## Perusversion tarjoama toiminnallisuus
 
@@ -30,9 +30,9 @@ Ensimmäinen näkymä on master salasanan asettamista varten. Kun salasana on ke
 
 ### Kirjautuneena
 
-- Käyttäjä pystyy selaamaan omia kohteitaan listalta. ✅ **tehty viikolla 5**
+- Käyttäjä pystyy selaamaan omia kohteitaan listalta. **tehty aiemmin**
 - Käyttäjä voi lisätä uuden kohteen listalle. **tehty aiemmin**
-    - Lisääminen aukeaa eri näkymään, ja vaatii sen että käyttäjä syöttää: ✅ **tehty viikolla 5**
+    - Lisääminen aukeaa eri näkymään, ja vaatii sen että käyttäjä syöttää: **tehty aiemmin**
         1. Verkkosivun (vaaditaan)
         1. Käyttäjänimen (vaihtoehtoinen)
         1. Sähköpostin (vaihtoehtoinen)
@@ -42,9 +42,9 @@ Ensimmäinen näkymä on master salasanan asettamista varten. Kun salasana on ke
 
 ## Jatkokehitysideoita
 
-- Kehityksen alkuvaiheessa sovellus saattaa tallentaa salasanat turvattomasti. Tämä on korkein prioriteetti heti kun perusversion toiminnot implementoitu.
+- Kehityksen alkuvaiheessa sovellus saattaa tallentaa salasanat turvattomasti. Tämä on korkein prioriteetti heti kun perusversion toiminnot implementoitu. ✅ **Tehty viikolla 6**
 - Alkuvaiheen sovellus tukee ainoastaan tietojen lisäämistä ja lukemista. Tavoite on että sovellukselle saadaan myös seuraavat toiminnot myöhemmässä vaiheessa:
-    - Tietojen muokkaaminen.
+    - Tietojen muokkaaminen. ✅ **Tehty viikolla 6**
     - Tiedon poistaminen.
 - Työkalu jolla voidaan generoida salasana automaattisesti.
 - Ajan salliessa: Ilmoitus jos jollain verkkosivulla tietovuoto.
