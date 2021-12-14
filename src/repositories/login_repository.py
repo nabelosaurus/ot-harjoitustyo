@@ -17,6 +17,17 @@ class LoginRepository:
                 row["username"],
                 row["email"]) for row in rows]
 
+    def update_by_id(self, login):
+        token = hashing_service.encrypt_login_password(login)
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "update logins set website = ?, username = ?, email = ?, password = ?, salt = ? WHERE id = ?",
+            (login.website, login.username, login.email, token, login.salt, login.id)
+        )
+        self._connection.commit()
+        return True
+        
+
     def create(self, login):
         token = hashing_service.encrypt_login_password(login)
         cursor = self._connection.cursor()
