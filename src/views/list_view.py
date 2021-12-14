@@ -1,5 +1,6 @@
 from tkinter import ttk, constants, Canvas
 from services.logins_service import LoginService
+from services.hashing_service import hashing_service
 
 
 class ListView:
@@ -31,7 +32,7 @@ class ListView:
 
     def _copy_handler(self, item):
         self._root.clipboard_clear()
-        self._root.clipboard_append(item.password)
+        self._root.clipboard_append(hashing_service.decrypt_login_password(item.password, item.salt))
 
     def _initialize(self):
         data = self._login_service.get_all_logins()
