@@ -15,8 +15,8 @@ class UserService:
     def register(self, password, verification):
         if self.check_password_length(password) and self.passwords_match(password, verification):
             user = User(_id=None, master_password=password)
-            success = self.user_repository.create(user)
-            return bool(success)
+            self.user_repository.create(user)
+            return True
         return False
 
     def passwords_match(self, password, verification):
