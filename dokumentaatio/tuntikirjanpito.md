@@ -9,5 +9,9 @@
 | 28.11 | Käyttöliittymän ja navigoinnin viimeisely. | 8 |
 | 30.11 | Tietokannan implementoiminen ja sovelluslogiikan kehittäminen | 8 |
 | 30.11 | Ohjelmakoodin refaktorointia, testien kirjoittamista, sekä pakkauskaavion piirtäminen | 7 |
-| 7.11  | Scrollattava lista, sovelluslogiikan irroittaminen käyttöliittymästä (LoginService), syötteen validointia, testejä | 8 |
-| yht.  |  | 47 | 
+| 7.12  | Scrollattava lista, sovelluslogiikan irroittaminen käyttöliittymästä (LoginService), syötteen validointia, testejä | 8 |
+| 10.12  | Argon2 ja cryptography kirjastoihin tutustuminen | 3 |
+| 11.12  | Argon2 kirjaston sisälyttäminen projektiin, ja pääsalasanan salaaminen sillä  | 2 |
+| 13.12  | Kirjautumiskohteiden salasanojen salaaminen ja suolaaminen. Muutoksia tietokantayhteydestä käyttöliittymään  | 8 |
+| 13.12  | Kirjautumiskohteiden muokkaaminen mahdollistettu. Syötteen varmentamista parannettu.  | 2 |
+| yht.  |  | 62 |
