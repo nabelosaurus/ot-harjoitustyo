@@ -39,7 +39,6 @@ class LoginService:
         """
         self.login_repository.update_by_id(details)
 
-
     def process_save(self, website, username, email, password):
         """Handles validation of inputs, and saving a new login item.
 
@@ -54,13 +53,13 @@ class LoginService:
                         0-index: True if input meets validation checks, otherwise False.
                         1-index: Generated error message that is passed to the UI incase of validation fail.
         """
-        login = Login(_id=None, website=website, password=password, salt=hashing_service.create_salt(), username=username, email=email)
+        login = Login(_id=None, website=website, password=password,
+                      salt=hashing_service.create_salt(), username=username, email=email)
         is_valid, error_msg = validate_input(login)
         if is_valid:
             self.create_new(login)
             return True, error_msg
         return False, error_msg
-
 
     def process_update(self, login_id, website, email, username, password):
         """Handles validation of inputs, and updating an existing login item.
@@ -77,7 +76,8 @@ class LoginService:
                         0-index: True if input meets validation checks, otherwise False.
                         1-index: Generated error message that is passed to the UI incase of validation fail.
         """
-        login = Login(_id=login_id, website=website, password=password, salt=hashing_service.create_salt(), username=username, email=email)
+        login = Login(_id=login_id, website=website, password=password,
+                      salt=hashing_service.create_salt(), username=username, email=email)
         is_valid, error_msg = validate_input(login)
         if is_valid:
             self.update_existing(login)

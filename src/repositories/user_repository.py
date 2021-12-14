@@ -1,9 +1,11 @@
 from entities.user import User
 from services.hashing_service import hashing_service
 
+
 class UserRepository:
     """Repository class for communicating with the users table of the database.
     """
+
     def __init__(self, connection):
         """Constructor for the UserRepository
 

@@ -5,6 +5,7 @@ from entities.login import Login
 from repositories.login_repository import LoginRepository
 from services.logins_service import LoginService
 
+
 class TestLogins(unittest.TestCase):
     def setUp(self):
         initialize_database()
@@ -56,7 +57,6 @@ class TestLogins(unittest.TestCase):
         )
         self.assertFalse(self.login_service.validate_input(login))
 
-
     def test_validation_10_characters_long_missing_username_and_email(self):
         login = Login(
             None,
@@ -73,8 +73,6 @@ class TestLogins(unittest.TestCase):
             "hellohello"
         )
         self.assertTrue(self.login_service.validate_input(login))
-
-    
 
     def tearDown(self):
         initialize_database()

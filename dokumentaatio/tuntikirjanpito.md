@@ -14,4 +14,5 @@
 | 11.12  | Argon2 kirjaston sisälyttäminen projektiin, ja pääsalasanan salaaminen sillä  | 2 |
 | 13.12  | Kirjautumiskohteiden salasanojen salaaminen ja suolaaminen. Muutoksia tietokantayhteydestä käyttöliittymään  | 8 |
 | 13.12  | Kirjautumiskohteiden muokkaaminen mahdollistettu. Syötteen varmentamista parannettu.  | 2 |
-| yht.  |  | 62 |
+| 14.12  | Docstring dokumentointi aloitettu.  | 1 |
+| yht.  |  | 63 |

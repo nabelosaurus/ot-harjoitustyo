@@ -1,6 +1,7 @@
 class User:
     """User object
     """
+
     def __init__(self, _id, master_password):
         """Constructor of User object
 

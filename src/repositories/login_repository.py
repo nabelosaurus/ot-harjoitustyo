@@ -1,9 +1,11 @@
 from entities.login import Login
 from services.hashing_service import hashing_service
 
+
 class LoginRepository:
     """Repository class for communicating with the logins table of the database.
     """
+
     def __init__(self, connection):
         """Constructor for the LoginRepository
 
@@ -42,7 +44,6 @@ class LoginRepository:
             (login.website, login.username, login.email, token, login.salt, login.id)
         )
         self._connection.commit()
-        
 
     def create(self, login):
         """Insert login object into logins table.

@@ -1,6 +1,7 @@
 class Login:
     """Login object
     """
+
     def __init__(self, _id, website, password, salt=None, username=None, email=None):
         """Constructor of Login object
 

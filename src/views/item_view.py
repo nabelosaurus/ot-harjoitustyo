@@ -23,8 +23,10 @@ class ItemView:
         if is_valid:
             self._handle_view_list()
         else:
-            error_label = ttk.Label(master=self._frame, text=errors, wraplength=425)
-            error_label.grid(row=10, column=0, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=10)
+            error_label = ttk.Label(
+                master=self._frame, text=errors, wraplength=425)
+            error_label.grid(row=10, column=0, columnspan=2, sticky=(
+                constants.E, constants.W), padx=5, pady=10)
 
     def _save_click(self):
         site_entry = self.site_entry.get()
@@ -34,7 +36,8 @@ class ItemView:
         ) if self.username_entry.get() != "" else None
         password_entry = self.password_entry.get()
 
-        is_valid, errors = self._login_service.process_save(website=site_entry, username=username_entry, email=email_entry, password=password_entry)
+        is_valid, errors = self._login_service.process_save(
+            website=site_entry, username=username_entry, email=email_entry, password=password_entry)
 
         self._handle_save_or_update(is_valid, errors)
 
@@ -47,7 +50,8 @@ class ItemView:
         ) if self.username_entry.get() != "" else None
         password_entry = self.password_entry.get()
 
-        is_valid, errors = self._login_service.process_update(login_id=login_id, website=site_entry, email=email_entry, username=username_entry, password=password_entry)
+        is_valid, errors = self._login_service.process_update(
+            login_id=login_id, website=site_entry, email=email_entry, username=username_entry, password=password_entry)
 
         self._handle_save_or_update(is_valid, errors)
 
