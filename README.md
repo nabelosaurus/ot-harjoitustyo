@@ -2,8 +2,9 @@
 
 Yksinkertainen sovellus salasanojen hallintaa varten.
 
-[Release 1 / Viikko 5](https://github.com/nabelosaurus/ot-harjoitustyo/releases/tag/viikko5)
+[Release 2 / Viikko 6](https://github.com/nabelosaurus/ot-harjoitustyo/releases/tag/viikko6)
 
+[Release 1 / Viikko 5](https://github.com/nabelosaurus/ot-harjoitustyo/releases/tag/viikko5)
 
 ### Asennus
 
